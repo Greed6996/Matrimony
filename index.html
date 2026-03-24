@@ -55,8 +55,6 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* 5. ANIMATIONS & INTERACTIONS */
-
         /* Route Changes - Fade in */
         .page-transition {
             animation: fadeIn 200ms ease-in forwards;
@@ -132,8 +130,8 @@
         </div>
     </nav>
 
-    <!-- 1. HERO SECTION (Split Layout) -->
     <main class="flex-grow">
+        <!-- 1. HERO SECTION -->
         <section class="relative w-full min-h-[85vh] flex flex-col lg:flex-row items-stretch">
             
             <!-- Left Side: Conversion Optimized Search Form -->
@@ -225,8 +223,8 @@
             </div>
         </section>
 
-        <!-- 2. GALLERY SECTION (Breathable Grid) -->
-        <section class="py-24 bg-white relative">
+        <!-- 2. GALLERY SECTION (Expanded to 8 Cards) -->
+        <section class="py-24 bg-white relative border-b border-taupe/10">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16">
                     <div class="max-w-xl">
@@ -243,7 +241,7 @@
                     </div>
                 </div>
 
-                <!-- Grid layout for profiles -->
+                <!-- Grid layout for exactly 8 profiles -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     
                     <!-- Profile Card 1 -->
@@ -294,7 +292,6 @@
                                 <svg class="w-4 h-4 mr-1 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                 New York, USA
                             </p>
-                            
                             <div class="mt-auto grid grid-cols-2 gap-3">
                                 <button class="btn-lift bg-stoneDark text-white py-3 rounded-lg text-sm font-medium border border-transparent hover:bg-black transition-colors">
                                     Express Interest
@@ -322,7 +319,6 @@
                                 <svg class="w-4 h-4 mr-1 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                 London, UK
                             </p>
-                            
                             <div class="mt-auto grid grid-cols-2 gap-3">
                                 <button class="btn-lift bg-stoneDark text-white py-3 rounded-lg text-sm font-medium border border-transparent hover:bg-black transition-colors">
                                     Express Interest
@@ -334,9 +330,119 @@
                         </div>
                     </article>
 
-                    <!-- Example loading skeleton replacing the 4th card to show interaction state -->
+                    <!-- Profile Card 4 -->
+                    <article class="card-premium rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Karan Singh" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl text-stoneDark">Karan, 30</h3>
+                            </div>
+                            <p class="text-taupe text-sm mb-1">Corporate Lawyer</p>
+                            <p class="text-taupe text-sm mb-6 flex items-center">
+                                <svg class="w-4 h-4 mr-1 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Toronto, CA
+                            </p>
+                            <div class="mt-auto grid grid-cols-2 gap-3">
+                                <button class="btn-lift bg-stoneDark text-white py-3 rounded-lg text-sm font-medium border border-transparent hover:bg-black transition-colors">
+                                    Express Interest
+                                </button>
+                                <button class="py-3 rounded-lg text-sm font-medium text-stoneDark border border-taupe/20 hover:border-stoneDark transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile Card 5 -->
+                    <article class="card-premium rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Ananya Desai" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-stoneDark shadow-sm">
+                                95% Match
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl text-stoneDark">Ananya, 29</h3>
+                            </div>
+                            <p class="text-taupe text-sm mb-1">AI Researcher</p>
+                            <p class="text-taupe text-sm mb-6 flex items-center">
+                                <svg class="w-4 h-4 mr-1 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                San Francisco, USA
+                            </p>
+                            <div class="mt-auto grid grid-cols-2 gap-3">
+                                <button class="btn-lift bg-stoneDark text-white py-3 rounded-lg text-sm font-medium border border-transparent hover:bg-black transition-colors">
+                                    Express Interest
+                                </button>
+                                <button class="py-3 rounded-lg text-sm font-medium text-stoneDark border border-taupe/20 hover:border-stoneDark transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile Card 6 -->
+                    <article class="card-premium rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Rohan Verma" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl text-stoneDark">Rohan, 32</h3>
+                            </div>
+                            <p class="text-taupe text-sm mb-1">Venture Capitalist</p>
+                            <p class="text-taupe text-sm mb-6 flex items-center">
+                                <svg class="w-4 h-4 mr-1 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                London, UK
+                            </p>
+                            <div class="mt-auto grid grid-cols-2 gap-3">
+                                <button class="btn-lift bg-stoneDark text-white py-3 rounded-lg text-sm font-medium border border-transparent hover:bg-black transition-colors">
+                                    Express Interest
+                                </button>
+                                <button class="py-3 rounded-lg text-sm font-medium text-stoneDark border border-taupe/20 hover:border-stoneDark transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile Card 7 -->
+                    <article class="card-premium rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Neha Gupta" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl text-stoneDark">Neha, 26</h3>
+                            </div>
+                            <p class="text-taupe text-sm mb-1">Curator, Art Gallery</p>
+                            <p class="text-taupe text-sm mb-6 flex items-center">
+                                <svg class="w-4 h-4 mr-1 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Paris, FR
+                            </p>
+                            <div class="mt-auto grid grid-cols-2 gap-3">
+                                <button class="btn-lift bg-stoneDark text-white py-3 rounded-lg text-sm font-medium border border-transparent hover:bg-black transition-colors">
+                                    Express Interest
+                                </button>
+                                <button class="py-3 rounded-lg text-sm font-medium text-stoneDark border border-taupe/20 hover:border-stoneDark transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile Card 8 (Loading Skeleton Style to show state transition options) -->
                     <article class="card-premium rounded-xl p-6 flex flex-col h-full border border-taupe/10 shadow-sm relative overflow-hidden">
-                        <!-- Shimmer Layer over whole card -->
                         <div class="relative h-80 rounded-lg overflow-hidden skeleton mb-6"></div>
                         <div class="space-y-4">
                             <div class="h-6 w-3/4 skeleton rounded"></div>
@@ -359,12 +465,240 @@
             </div>
         </section>
 
+        <!-- 3. HOW IT WORKS SECTION (3-Column Layout) -->
+        <section class="py-24 bg-cream relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <p class="font-accent italic text-gold text-xl mb-2">The Process</p>
+                    <h2 class="font-heading text-4xl text-stoneDark mb-6">How It Works</h2>
+                    <p class="text-taupe leading-relaxed font-light">
+                        Our premium matchmaking process is meticulously designed to connect you with individuals who truly align with your sophisticated lifestyle and values.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-20 h-20 rounded-full bg-white shadow-sm border border-taupe/10 flex items-center justify-center mb-6 text-gold group-hover:-translate-y-2 transition-transform duration-300">
+                            <!-- Elegant SVG Icon: Checklist/Apply -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-2xl text-stoneDark mb-3">1. Apply</h3>
+                        <p class="text-taupe text-sm font-light leading-relaxed">
+                            Submit a comprehensive profile detailing your background, lifestyle, and what you deeply seek in a partner.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-20 h-20 rounded-full bg-white shadow-sm border border-taupe/10 flex items-center justify-center mb-6 text-gold group-hover:-translate-y-2 transition-transform duration-300">
+                            <!-- Elegant SVG Icon: Curated Sparkles/Stars -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-2xl text-stoneDark mb-3">2. Curated Matches</h3>
+                        <p class="text-taupe text-sm font-light leading-relaxed">
+                            Our algorithms and expert matchmakers handpick compatible profiles to ensure alignment on all fronts.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-20 h-20 rounded-full bg-white shadow-sm border border-taupe/10 flex items-center justify-center mb-6 text-gold group-hover:-translate-y-2 transition-transform duration-300">
+                            <!-- Elegant SVG Icon: Connect/Heart -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-2xl text-stoneDark mb-3">3. Connect</h3>
+                        <p class="text-taupe text-sm font-light leading-relaxed">
+                            Express interest securely and begin meaningful conversations that lead to lifelong partnerships.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SUCCESS STORIES (Social Proof) -->
+        <section class="py-24 bg-white relative border-y border-taupe/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <p class="font-accent italic text-gold text-xl mb-2">Social Proof</p>
+                    <h2 class="font-heading text-4xl text-stoneDark mb-6">Success Stories</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Testimonial 1 -->
+                    <div class="card-premium rounded-2xl p-10 flex flex-col justify-between">
+                        <svg class="w-10 h-10 text-gold/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                        <p class="text-stoneDark font-light text-lg italic leading-relaxed mb-8 flex-grow">
+                            "Finding someone who matches both my professional ambition and traditional family values seemed impossible. The curated matching here proved otherwise. We just celebrated our first anniversary."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-cream mr-4">
+                                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Arjun & Maya" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-lg text-stoneDark">Arjun & Maya</h4>
+                                <span class="text-xs text-taupe font-medium uppercase tracking-wider">Married in 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="card-premium rounded-2xl p-10 flex flex-col justify-between">
+                        <svg class="w-10 h-10 text-gold/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                        <p class="text-stoneDark font-light text-lg italic leading-relaxed mb-8 flex-grow">
+                            "The discretion and security features were what drew me in, but the high-caliber profiles kept me engaged. The system understands nuance better than any other platform we tried."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-cream mr-4">
+                                <img src="https://images.unsplash.com/photo-1621804256616-2eb64687d97b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Vivek & Sneha" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-lg text-stoneDark">Vivek & Sneha</h4>
+                                <span class="text-xs text-taupe font-medium uppercase tracking-wider">Engaged in 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECURITY & PRIVACY FEATURES -->
+        <!-- Using a slightly contrasting background to break flow: Taupe with low opacity works elegantly -->
+        <section class="py-24 bg-[#F5F5F4] relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    
+                    <div class="w-full lg:w-1/2">
+                        <div class="bg-white p-2 rounded-2xl shadow-premium border border-taupe/10 inline-block rotate-2">
+                            <img src="https://images.unsplash.com/photo-1555529733-0e670560f8e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Secure Padlock Minimal" class="rounded-xl w-full max-w-md object-cover">
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-1/2">
+                        <p class="font-accent italic text-gold text-xl mb-4">Uncompromised Discretion</p>
+                        <h2 class="font-heading text-4xl text-stoneDark mb-6 leading-tight">Your privacy is our <br/>highest priority.</h2>
+                        <p class="text-taupe font-light mb-10 leading-relaxed">
+                            We implement enterprise-grade security protocols so you can search, connect, and converse with absolute peace of mind.
+                        </p>
+
+                        <ul class="space-y-8">
+                            <li class="flex items-start">
+                                <span class="w-10 h-10 rounded-full bg-cream border border-taupe/20 flex items-center justify-center text-gold mr-4 flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h4 class="font-heading text-xl text-stoneDark mb-1">100% ID Verification</h4>
+                                    <p class="text-sm font-light text-taupe leading-relaxed">Every member undergoes strict identity verification, ensuring a sophisticated and authentic community.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-10 h-10 rounded-full bg-cream border border-taupe/20 flex items-center justify-center text-gold mr-4 flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h4 class="font-heading text-xl text-stoneDark mb-1">Secure Communication</h4>
+                                    <p class="text-sm font-light text-taupe leading-relaxed">End-to-end encrypted messaging designed strictly to keep your conversations private and personal.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-10 h-10 rounded-full bg-cream border border-taupe/20 flex items-center justify-center text-gold mr-4 flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h4 class="font-heading text-xl text-stoneDark mb-1">Profile Visibility Control</h4>
+                                    <p class="text-sm font-light text-taupe leading-relaxed">You control exactly what information is shared and precisely who can view your imagery.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer snippet for completeness -->
-    <footer class="bg-stoneDark text-cream py-12 text-center border-t border-taupe/20">
-        <div class="font-heading text-2xl font-bold mb-4 tracking-wider">Knot & Tie</div>
-        <p class="text-sm font-light text-cream/70">&copy; 2026 Premium Matrimony Directory. All Rights Reserved.</p>
+    <!-- 6. COMPREHENSIVE FOOTER -->
+    <footer class="bg-stoneDark text-cream py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16 border-b border-cream/10 pb-16">
+                
+                <!-- Brand / Newsletter (Takes 2 columns space) -->
+                <div class="lg:col-span-2">
+                    <div class="text-3xl font-heading font-bold text-white tracking-tight mb-6">Knot & Tie</div>
+                    <p class="text-sm font-light text-cream/70 mb-8 max-w-sm leading-relaxed">
+                        The definitive network for high-value individuals seeking meaningful, authentic relationships built unconditionally on trust.
+                    </p>
+                    
+                    <h5 class="text-xs font-bold tracking-widest uppercase text-white mb-4">Exclusive Newsletter</h5>
+                    <form class="flex" class="w-full max-w-sm">
+                        <input type="email" placeholder="Your email address" class="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-l-lg w-full focus:outline-none focus:border-gold transition-colors text-sm font-light">
+                        <button type="button" class="bg-gold text-white px-6 py-3 rounded-r-lg font-medium text-sm hover:bg-gold/90 transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Column: About -->
+                <div class="pt-2">
+                    <h5 class="text-xs font-bold tracking-widest uppercase text-white mb-6">About Us</h5>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Our Vision</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">The Matchmakers</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Success Rates</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Press & Media</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column: Support -->
+                <div class="pt-2">
+                    <h5 class="text-xs font-bold tracking-widest uppercase text-white mb-6">Support</h5>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Help Center</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Membership Tiers</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Contact Concierge</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Verification Guide</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column: Legal / Privacy -->
+                <div class="pt-2">
+                    <h5 class="text-xs font-bold tracking-widest uppercase text-white mb-6">Legal</h5>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Privacy Policy</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Terms of Service</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Cookie Policy</a></li>
+                        <li><a href="#" class="text-sm font-light text-cream/70 hover:text-gold transition-colors block">Safety Regulations</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-cream/50 font-light">
+                <p>&copy; 2026 Knot & Tie Premium Matrimony. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gold transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-gold transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-gold transition-colors">Twitter</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>

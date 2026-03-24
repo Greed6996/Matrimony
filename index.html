@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Matrimony | Find Your Perfect Match</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for standalone preview) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stoneDark: '#1C1917',
+                        gold: '#CA8A04',
+                        cream: '#FAFAF9',
+                        warmBlack: '#292524',
+                        taupe: '#78716C'
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['"Montserrat"', 'sans-serif'],
+                        accent: ['"Cormorant Garamond"', 'serif']
+                    },
+                    boxShadow: {
+                        'elevation': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                        'premium': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Defaults */
+        body {
+            background-color: #FAFAF9; /* Cream */
+            color: #292524; /* Warm Black */
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-accent {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* 5. ANIMATIONS & INTERACTIONS */
+
+        /* Route Changes - Fade in */
+        .page-transition {
+            animation: fadeIn 200ms ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Button Hover Lift */
+        .btn-lift {
+            transition: transform 300ms ease, box-shadow 300ms ease, background-color 300ms ease;
+        }
+        .btn-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Card Hover Lift */
+        .card-premium {
+            transition: transform 300ms ease, box-shadow 300ms ease;
+            background-color: #ffffff;
+            border: 1px solid rgba(120, 113, 108, 0.1);
+        }
+        .card-premium:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Shimmer Loading State */
+        .skeleton {
+            background: #E5E7EB;
+            background-image: linear-gradient(
+                90deg, 
+                rgba(255, 255, 255, 0) 0, 
+                rgba(255, 255, 255, 0.8) 50%, 
+                rgba(255, 255, 255, 0) 100%
+            );
+            background-size: 200px 100%;
+            background-repeat: no-repeat;
+            animation: shimmer 1.5s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
+        }
+
+        /* Hide scrollbar for search panel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="page-transition min-h-screen flex flex-col pt-24 font-light">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 h-24 bg-cream/90 backdrop-blur-md border-b border-taupe/10 z-50 flex items-center">
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+            <div class="text-3xl font-heading font-bold text-stoneDark tracking-tight">Knot & Tie</div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-warmBlack">
+                <a href="#" class="hover:text-gold transition-colors duration-200">Discover</a>
+                <a href="#" class="hover:text-gold transition-colors duration-200">Success Stories</a>
+                <a href="#" class="hover:text-gold transition-colors duration-200">Membership</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-sm font-medium text-warmBlack hover:text-gold transition-colors duration-200">Sign In</a>
+                <a href="#" class="btn-lift bg-stoneDark text-cream px-6 py-2.5 rounded-full text-sm font-medium">Join Exclusive</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION (Split Layout) -->
+    <main class="flex-grow">
+        <section class="relative w-full min-h-[85vh] flex flex-col lg:flex-row items-stretch">
+            
+            <!-- Left Side: Conversion Optimized Search Form -->
+            <div class="w-full lg:w-5/12 flex items-center justify-center p-8 lg:p-16 xl:p-24 bg-cream relative z-10">
+                <div class="w-full max-w-md">
+                    <p class="font-accent italic text-gold text-xl mb-4">The Premium Directory</p>
+                    <h1 class="font-heading text-5xl lg:text-6xl text-stoneDark leading-tight mb-6">
+                        Find a connection <br />
+                        <span class="text-taupe font-italic">worth keeping.</span>
+                    </h1>
+                    <p class="text-taupe text-base lg:text-lg mb-12 font-light leading-relaxed">
+                        An exclusive community for sophisticated individuals seeking meaningful, lasting relationships.
+                    </p>
+
+                    <!-- Trust / Search Form -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-taupe/10">
+                        <h3 class="font-heading text-2xl text-stoneDark mb-6 border-b border-taupe/10 pb-4">Refine Your Search</h3>
+                        
+                        <form class="space-y-5 cursor-pointer">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold tracking-widest text-taupe uppercase mb-2">I am</label>
+                                    <select class="w-full bg-cream border border-taupe/20 text-warmBlack rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors appearance-none cursor-pointer">
+                                        <option>A Woman</option>
+                                        <option>A Man</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold tracking-widest text-taupe uppercase mb-2">Seeking</label>
+                                    <select class="w-full bg-cream border border-taupe/20 text-warmBlack rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors appearance-none cursor-pointer">
+                                        <option>A Man</option>
+                                        <option>A Woman</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold tracking-widest text-taupe uppercase mb-2">Age From</label>
+                                    <select class="w-full bg-cream border border-taupe/20 text-warmBlack rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors appearance-none cursor-pointer">
+                                        <option>25</option>
+                                        <option>26</option>
+                                        <option>27</option>
+                                        <option>28</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold tracking-widest text-taupe uppercase mb-2">Age To</label>
+                                    <select class="w-full bg-cream border border-taupe/20 text-warmBlack rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors appearance-none cursor-pointer">
+                                        <option>35</option>
+                                        <option>36</option>
+                                        <option>37</option>
+                                        <option>40+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold tracking-widest text-taupe uppercase mb-2">Religion / Community</label>
+                                <select class="w-full bg-cream border border-taupe/20 text-warmBlack rounded-lg px-4 py-3 focus:outline-none focus:border-gold transition-colors appearance-none cursor-pointer">
+                                    <option>Any Community</option>
+                                    <option>Hindu</option>
+                                    <option>Christian</option>
+                                    <option>Muslim</option>
+                                    <option>Sikh</option>
+                                </select>
+                            </div>
+
+                            <button type="button" class="btn-lift w-full mt-4 bg-gold text-white font-medium py-4 rounded-lg text-sm tracking-wide">
+                                Search Profiles
+                            </button>
+                        </form>
+                        <div class="mt-6 flex items-center justify-center space-x-2 text-xs text-taupe font-medium">
+                            <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>100% Verified Profiles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side: Immersive Visual -->
+            <div class="w-full lg:w-7/12 relative min-h-[50vh] lg:min-h-full">
+                <img src="https://images.unsplash.com/photo-1518104593124-ac2e82a5eb9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                     alt="Elegant couple" 
+                     class="absolute inset-0 w-full h-full object-cover object-[center_30%]" />
+                <div class="absolute inset-0 bg-gradient-to-r from-cream via-cream/20 to-transparent lg:w-1/3"></div>
+            </div>
+        </section>
+
+        <!-- 2. GALLERY SECTION (Breathable Grid) -->
+        <section class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                    <div class="max-w-xl">
+                        <p class="font-accent italic text-gold text-xl mb-2">Curated Matches</p>
+                        <h2 class="font-heading text-4xl text-stoneDark">Featured Profiles</h2>
+                    </div>
+                    <div class="mt-6 md:mt-0 flex space-x-4">
+                        <button class="w-12 h-12 rounded-full border border-taupe/20 flex items-center justify-center text-stoneDark hover:border-gold hover:text-gold transition-colors duration-200 cursor-pointer">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button class="w-12 h-12 rounded-full border border-taupe/20 flex items-center justify-center text-stoneDark hover:border-gold hover:text-gold transition-colors duration-200 cursor-pointer">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grid layout for profiles -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Profile Card 1 -->
+                    <article class="card-premium rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Priya Sharma" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-stoneDark shadow-sm">
+                                98% Match
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl text-stoneDark">Priya, 28</h3>
+                                <span class="bg-cream text-taupe text-xs px-2 py-1 rounded font-medium">New</span>
+                            </div>
+                            <p class="text-taupe text-sm mb-1">Architecture Director</p>
+                            <p class="text-taupe text-sm mb-6 flex items-center">
+                                <svg class="w-4 h-4 mr-1 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Mumbai, IN
+                            </p>
+                            
+                            <div class="mt-auto grid grid-cols-2 gap-3">
+                                <button class="btn-lift bg-stoneDark text-white py-3 rounded-lg text-sm font-medium border border-transparent hover:bg-black transition-colors">
+                                    Express Interest
+                                </button>
+                                <button class="py-3 rounded-lg text-sm font-medium text-stoneDark border border-taupe/20 hover:border-stoneDark transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile Card 2 -->
+                    <article class="card-premium rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Arjun Patel" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl text-stoneDark">Arjun, 31</h3>
+                            </div>
+                            <p class="text-taupe text-sm mb-1">Investment Banker</p>
+                            <p class="text-taupe text-sm mb-6 flex items-center">
+                                <svg class="w-4 h-4 mr-1 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                New York, USA
+                            </p>
+                            
+                            <div class="mt-auto grid grid-cols-2 gap-3">
+                                <button class="btn-lift bg-stoneDark text-white py-3 rounded-lg text-sm font-medium border border-transparent hover:bg-black transition-colors">
+                                    Express Interest
+                                </button>
+                                <button class="py-3 rounded-lg text-sm font-medium text-stoneDark border border-taupe/20 hover:border-stoneDark transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile Card 3 -->
+                    <article class="card-premium rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Meera Reddy" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl text-stoneDark">Meera, 27</h3>
+                            </div>
+                            <p class="text-taupe text-sm mb-1">Dermatologist</p>
+                            <p class="text-taupe text-sm mb-6 flex items-center">
+                                <svg class="w-4 h-4 mr-1 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                London, UK
+                            </p>
+                            
+                            <div class="mt-auto grid grid-cols-2 gap-3">
+                                <button class="btn-lift bg-stoneDark text-white py-3 rounded-lg text-sm font-medium border border-transparent hover:bg-black transition-colors">
+                                    Express Interest
+                                </button>
+                                <button class="py-3 rounded-lg text-sm font-medium text-stoneDark border border-taupe/20 hover:border-stoneDark transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Example loading skeleton replacing the 4th card to show interaction state -->
+                    <article class="card-premium rounded-xl p-6 flex flex-col h-full border border-taupe/10 shadow-sm relative overflow-hidden">
+                        <!-- Shimmer Layer over whole card -->
+                        <div class="relative h-80 rounded-lg overflow-hidden skeleton mb-6"></div>
+                        <div class="space-y-4">
+                            <div class="h-6 w-3/4 skeleton rounded"></div>
+                            <div class="h-4 w-1/2 skeleton rounded"></div>
+                            <div class="h-4 w-full skeleton rounded"></div>
+                        </div>
+                        <div class="mt-8 grid grid-cols-2 gap-3">
+                            <div class="h-12 w-full skeleton rounded-lg"></div>
+                            <div class="h-12 w-full skeleton rounded-lg"></div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="mt-16 text-center">
+                    <button class="btn-lift bg-transparent text-stoneDark border-b-2 border-gold pb-1 font-medium font-heading text-xl hover:text-gold transition-colors">
+                        View Complete Directory
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer snippet for completeness -->
+    <footer class="bg-stoneDark text-cream py-12 text-center border-t border-taupe/20">
+        <div class="font-heading text-2xl font-bold mb-4 tracking-wider">Knot & Tie</div>
+        <p class="text-sm font-light text-cream/70">&copy; 2026 Premium Matrimony Directory. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
